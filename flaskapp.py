@@ -14,7 +14,8 @@ def send_gpt(prompt):
         response = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
         #model = 'text-davinci-003',
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "system", "content": "You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible."},
+        {"role": "user", "content": prompt}]
         )
         return response["choices"][0]['message']['content']
     except Exception as e:
