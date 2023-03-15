@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, redirect,jsonify
 import openai
 import os
 from dotenv import load_dotenv
-from revChatGPT.V3 import Chatbot
 load_dotenv()
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -27,12 +26,9 @@ def index():
 def get_request_json():
     
     question = request.args.get('msg')
-    print("======================================")
-    print("Receive the question:", question)
+    #print("======================================")
+    #print("Receive the question:", question)
     res = send_gpt(question)
-
-    print("Q：\n", question)
-    print("A：\n", res)
     return res
 
 if __name__ == '__main__':
