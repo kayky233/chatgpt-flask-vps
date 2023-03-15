@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    server_name 45.32.253.220;
+location / {
+             include proxy_params;
+             proxy_pass http://unix:/home/kayky/webapp/flaskapp.sock;
+    }
+}
+server {
+    listen 80;
+    server_name kayky.tk www.kayky.tk;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/kayky/webapp/flaskapp.sock;
+    }
+}
