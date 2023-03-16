@@ -1,10 +1,33 @@
 * {
   box-sizing: border-box;
 }
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
 
 body {
   background-color: #edeff2;
   font-family: "Calibri", "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -201,3 +224,12 @@ body {
 .message_template {
   display: none;
 }
+footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+	margin-top: auto;
+}
+
+

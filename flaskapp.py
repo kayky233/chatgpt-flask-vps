@@ -21,8 +21,28 @@ def send_gpt(prompt):
     except Exception as e:
         return e
 @app.route("/")
-def index():
+def home():
     return render_template("chat.html")
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+@app.route('/logout')
+def logout():
+    # 执行用户登出操作
+    return "Logout successful!"
 
 @app.route("/get", methods=['GET'])
 def get_request_json():

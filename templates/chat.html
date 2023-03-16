@@ -11,6 +11,23 @@
 </head>
 
 <body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="{{ url_for('home') }}">Home</a></li>
+				<li><a href="{{ url_for('about') }}">About</a></li>
+				<li><a href="{{ url_for('contact') }}">Contact</a></li>
+				{% if logged_in %}
+				<li><a href="{{ url_for('logout') }}">Logout</a></li>
+				{% else %}
+				<li><a href="{{ url_for('login') }}">Login</a></li>
+				<li><a href="{{ url_for('register') }}">Register</a></li>
+				{% endif %}
+			</ul>
+		</nav>
+	</header>
+
+
 <div align="center">
     <div class="chat_window">
         <div class="top_menu">
@@ -35,5 +52,9 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+
 </body>
 </html>
