@@ -3,14 +3,17 @@ from flask import Flask, request, render_template, redirect,jsonify
 import openai
 import os
 from dotenv import load_dotenv
+from revChatGPT.V3 import Chatbot
 load_dotenv()
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 app = Flask(__name__)
-
+chatbot = Chatbot(api_key=openai.api_key)
 def send_gpt(prompt):
     try:
+        # 单论对话api
+        '''
         response = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
         #model = 'text-davinci-003',
@@ -18,10 +21,15 @@ def send_gpt(prompt):
         {"role": "user", "content": prompt}]
         )
         return response["choices"][0]['message']['content']
+        '''
+        # 多轮对话api
+        response = chatbot.ask(prompt)
+        return str(response)
     except Exception as e:
         return e
 @app.route("/")
 def home():
+    chatbot.reset()
     return render_template("chat.html")
 @app.route('/about')
 def about():
