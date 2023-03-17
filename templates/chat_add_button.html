@@ -8,6 +8,13 @@
     <meta charset="UTF-8">
     <title>OpenAI</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+		img {
+			display: none;
+			max-width: 100%;
+			height: auto;
+		}
+    </style>
 
 </head>
 <body>
@@ -40,34 +47,12 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-
 <div class="payimage">
-  <div class="payimage__wrapper"> 
-    <button id="btn" style="margin-left: 230px;">开发不易，请点击打赏一下吧</button>
-</br>
-    <img id="myImage" src="{{ url_for('static', filename='payimage.jpg') }}" alt="sponsor" class="payimage__img" style="display:none">
-    <script>
-        // 1.获取事件源
-        var btn = document.getElementById("btn");
-        var img = document.getElementsByTagName("img")[0];
-        // var isShow = true;
-        // 2.绑定事件
-        btn.onclick = function() {
-            // 3. 事件驱动程序
-            if(btn.innerHTML === "开发不易，请点击打赏一下吧"){
-                img.style.display = "block";
-                btn.innerHTML = "关闭";
-                // isShow = false;
-            } else {
-                img.style.display = "none";
-                btn.innerHTML = "开发不易，请点击打赏一下吧";
-                // isShow = true;
-            }
-        }
-    </script>
+  <div class="payimage__wrapper">
+    <button id="showImage">Show Image</button> 
+    <img id="myImage" src="{{ url_for('static', filename='payimage.jpg') }}" alt="sponsor" class="payimage__img">
   </div>
 </div>
-
 
 
 </body>

@@ -6,7 +6,23 @@ input.addEventListener("keydown", function (event) {
         document.getElementById("sendbutton").click();
     }
 });
-
+// 设置默认输入
+//init_message="你好";
+// Send the message to the chatbot
+//var xhr = new XMLHttpRequest();
+//xhr.open("GET", "/get?msg=" + init_message);
+//xhr.send();
+//xhr.onload = function () {
+	// Append the chatbot's response to the chatlog
+	////var chatlog = document.getElementById("chatlog");
+	//var response = document.createElement("div");
+	//response.innerHTML = "🤔<br>" + init_message + "<br>🤖" + marked.parse(xhr.responseText);
+        //chatlog.appendChild(response);
+        // Scroll the chatlog to the bottom
+        //chatlog.scrollTop = chatlog.scrollHeight;
+        //loading.style.display = 'none';
+        //}
+//document.getElementById("chatinput").value = "";
 // Add your JavaScript here
 document.getElementById("sendbutton").addEventListener("click", function () {
     let loading = document.getElementById('loading');
@@ -39,3 +55,11 @@ document.getElementById("sendbutton").addEventListener("click", function () {
         }
     }
 });
+
+// 点击按钮时显示弹出框和图片
+document.getElementById("showImage").addEventListener("click", function() {
+	let image = document.getElementById("myImage");
+	image.style.display='none';
+});
+
+

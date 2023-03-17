@@ -30,6 +30,7 @@ def send_gpt(prompt):
 @app.route("/")
 def home():
     chatbot.reset()
+    #chatbot.ask("hello")
     return render_template("chat.html")
 @app.route('/about')
 def about():

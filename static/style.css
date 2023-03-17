@@ -232,4 +232,18 @@ footer {
 	margin-top: auto;
 }
 
+.payimage {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 
+.payimage__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.payimage__img {
+  width: 200px;
+  height: 200px;
+}
