@@ -70,6 +70,7 @@
    pip3 install gunicorn
    pip3 install openai
    pip3 install python-dotenv
+   pip3 install revChatGPT
    
    ```
 
